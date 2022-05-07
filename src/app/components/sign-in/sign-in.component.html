@@ -1,0 +1,38 @@
+<form [formGroup]="credential">
+  <div>
+    <h5>Email</h5>
+    <input
+      type="text"
+      style="width: 100%; margin-top: 15px"
+      formControlName="email"
+      pInputText
+      placeholder="Enter email"
+    />
+  </div>
+
+  <div style="margin-top: 20px">
+    <h5>Password</h5>
+    <input
+      type="text"
+      style="width: 100%; margin-top: 15px"
+      formControlName="password"
+      pInputText
+      type="password"
+      placeholder="Enter password"
+    />
+  </div>
+
+  <div style="padding: 30px 0 0 0; display: flex; justify-content: flex-end">
+    <p-button
+      (click)="modal.toggleModal(false)"
+      label="Close"
+      styleClass="p-button-outlined"
+      style="margin-right: 20px"
+    ></p-button>
+    <p-button
+      (click)="onSubmit()"
+      label="Submit"
+      styleClass="p-button-secondary"
+    ></p-button>
+  </div>
+</form>
