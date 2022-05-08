@@ -20,6 +20,8 @@ import { AuthLayoutComponent } from './components/layout/auth-layout/auth-layout
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +33,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
   ],
   imports: [
     SharedModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

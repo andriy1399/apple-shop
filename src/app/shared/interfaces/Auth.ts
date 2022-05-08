@@ -1,7 +1,17 @@
-export interface User {
-  uid: string;
+export interface UName {
+  firstName: string;
+  lastName: string;
+}
+
+export interface User extends UName {
+  id: string;
   email: string;
-  name: string;
-  emailVerified: boolean;
   role: string;
 }
+
+export interface SignInCredentials {
+  email: string;
+  password: string;
+}
+
+export interface SignUpCredentials extends SignInCredentials, UName {}

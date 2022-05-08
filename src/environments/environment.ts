@@ -11,7 +11,7 @@ export const environment = {
     authDomain: 'appleshop-7147b.firebaseapp.com',
     messagingSenderId: '1097903138535',
   },
-  production: false
+  production: false,
 };
 
 /*
