@@ -22,6 +22,7 @@ import { ButtonModule } from 'primeng/button';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HttpClientModule } from '@angular/common/http';
+import { SignOutComponent } from './components/sign-out/sign-out.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreComponent,
     AuthLayoutComponent,
     SignInComponent,
+    SignOutComponent,
   ],
   imports: [
     SharedModule,

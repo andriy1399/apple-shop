@@ -1,16 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
-import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
+  selector: 'app-sign-out',
+  templateUrl: './sign-out.component.html',
+  styleUrls: ['./sign-out.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class SignOutComponent implements OnInit {
   @Input() changeForm!: (showSignIn: boolean) => void;
   credential = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
   });
@@ -19,6 +21,6 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
   onSubmit() {
     console.log(this.credential.value, '----')
-    this.auth.signIn(this.credential.value);
+    this.modal.toggleModal(false);
   }
 }

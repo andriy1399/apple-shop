@@ -1,13 +1,18 @@
 <p-dialog
-  [header]="header"
-  [(visible)]="showModal"
-  [modal]="true"
-  [style]="{ width: '500px' }"
-  [draggable]="false"
-  [resizable]="false"
+	[header]="header"
+	[(visible)]="showModal"
+	[modal]="true"
+	[style]="{ width: '500px' }"
+	[draggable]="false"
+	[resizable]="false"
 >
-  <div class="m-0">
-    <app-sign-in></app-sign-in>
-  </div>
-
+	<div class="m-0">
+		<app-sign-in
+			*ngIf="isSignIn; else singOutForm"
+			[changeForm]="changeModalForm"
+		></app-sign-in>
+		<ng-template #singOutForm>
+			<app-sign-out [changeForm]="changeModalForm"></app-sign-out>
+		</ng-template>
+	</div>
 </p-dialog>

@@ -34,7 +34,6 @@ export class AuthService {
     private firestore: AngularFirestore,
     private localS: LocalStorageService,
     private router: Router,
-    private signInModal: ModalService
   ) {}
 
   getCurrentUser() {
@@ -48,7 +47,6 @@ export class AuthService {
       this.user.getById(userCred.user.uid, (data: User) => {
         this.localS.setItem(LocalStorage.USER, data);
         Role.ADMIN === data.role && this.router.navigate([Page.ADMIN]);
-        this.signInModal.toggleModal(false);
       });
     });
   }
